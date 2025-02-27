@@ -61,7 +61,7 @@ class VatinValidator extends ConstraintValidator
         try {
             return $this->validator->isValid($value, $checkExistence);
         } catch (ViesException $e) {
-            throw new ValidatorException('VIES service unreachable', null, $e);
+            return false;
         }
     }
 }
